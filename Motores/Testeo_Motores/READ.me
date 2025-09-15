@@ -1,13 +1,29 @@
 # Testeo de Motores Open Lambot
 
-## Conexiones:
-- Motor Izquierdo: ENA=5, IN1=4, IN2=3
-- Motor Derecho: ENB=6, IN3=7, IN4=8
+## Descripción
+Código para probar el funcionamiento de los motores DC con driver L298N.
 
-## Comandos Serial:
-- w: Avanzar
-- s: Retroceder  
-- a: Girar izquierda
-- d: Girar derecha
-- x: Detener
-- 1-5: Control de velocidad
+## Conexiones
+- Motor Izquierdo: 
+  - ENA = Pin 5 (PWM)
+  - IN1 = Pin 4
+  - IN2 = Pin 3
+
+- Motor Derecho:
+  - ENB = Pin 6 (PWM)
+  - IN3 = Pin 7
+  - IN4 = Pin 8
+
+## Comandos por Monitor Serial
+- `w` - Avanzar
+- `s` - Retroceder
+- `a` - Girar izquierda (sobre sí mismo)
+- `d` - Girar derecha (sobre sí mismo)
+- `q` - Giro suave izquierda (curva)
+- `e` - Giro suave derecha (curva)
+- `x` - Detener motores
+- `1-5` - Control de velocidad (1=lento, 5=máximo)
+
+## Notas
+- Ajustar los pines según la conexión real del hardware
+- Velocidad por defecto: 150 (media)
