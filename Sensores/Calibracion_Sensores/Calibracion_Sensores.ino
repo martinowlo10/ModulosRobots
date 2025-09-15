@@ -1,4 +1,4 @@
-// Calibracion_Sensores.ino - CÓDIGO CORREGIDO
+// Calibracion_Sensores.ino
 
 #define PIN_Sensor_ON 7
 #define BUZZER_PIN 8
