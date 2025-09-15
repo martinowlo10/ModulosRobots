@@ -3,12 +3,12 @@
 
 // ====== FALTA AJUSTARLOS ======
 #define MOTOR_IZQ_ENA 5    // PWM velocidad motor izquierdo
-#define MOTOR_IZQ_IN1 4    // Control dirección 1 izquierdo
-#define MOTOR_IZQ_IN2 3    // Control dirección 2 izquierdo
+#define MOTOR_IZQ_IN1 8    // Control dirección 1 izquierdo
+#define MOTOR_IZQ_IN2 9   // Control dirección 2 izquierdo
 
 #define MOTOR_DER_ENB 6    // PWM velocidad motor derecho  
-#define MOTOR_DER_IN3 7    // Control dirección 1 derecho
-#define MOTOR_DER_IN4 8    // Control dirección 2 derecho
+#define MOTOR_DER_IN3 4    // Control dirección 1 derecho
+#define MOTOR_DER_IN4 7   // Control dirección 2 derecho
 // ======================================================
 
 void setup() {
@@ -46,15 +46,15 @@ void setup() {
 // Función para controlar motor izquierdo
 void controlMotorIzq(int velocidad, bool adelante) {
   analogWrite(MOTOR_IZQ_ENA, velocidad);
-  digitalWrite(MOTOR_IZQ_IN1, adelante ? HIGH : LOW);
-  digitalWrite(MOTOR_IZQ_IN2, adelante ? LOW : HIGH);
+  digitalWrite(MOTOR_IZQ_IN1, adelante ?  LOW : HIGH);
+  digitalWrite(MOTOR_IZQ_IN2, adelante ?  HIGH : LOW);
 }
 
 // Función para controlar motor derecho
 void controlMotorDer(int velocidad, bool adelante) {
   analogWrite(MOTOR_DER_ENB, velocidad);
-  digitalWrite(MOTOR_DER_IN3, adelante ? HIGH : LOW);
-  digitalWrite(MOTOR_DER_IN4, adelante ? LOW : HIGH);
+  digitalWrite(MOTOR_DER_IN3, adelante ? LOW : HIGH);
+  digitalWrite(MOTOR_DER_IN4, adelante ? HIGH : LOW);
 }
 
 // Función para detener ambos motores
@@ -190,3 +190,4 @@ void loop() {
   
   delay(10);
 }
+
