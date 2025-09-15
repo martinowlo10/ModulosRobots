@@ -1,7 +1,7 @@
 // Testeo_Motores.ino - Control básico de motores DC con L298N
 // Open Lambot - Testeo de motores
 
-// ====== AJUSTA ESTOS PINES SEGÚN TU CONEXIÓN REAL ======
+// ====== FALTA AJUSTARLOS ======
 #define MOTOR_IZQ_ENA 5    // PWM velocidad motor izquierdo
 #define MOTOR_IZQ_IN1 4    // Control dirección 1 izquierdo
 #define MOTOR_IZQ_IN2 3    // Control dirección 2 izquierdo
