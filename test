@@ -1,1 +1,43 @@
-kjyfjyuft
+#define pinIR 11
+int s[] = {0, 0, 0, 0, 0, 0};
+int pos = 0;
+int lastPos = 0; 
+
+void setup() {
+  pinMode(pinIR, OUTPUT);
+}
+
+void leerSensores() {
+  digitalWrite(pinIR, HIGH);
+  s[0] = analogRead(A1);
+  S[1] = analogRead(A2);
+  s[2] = analogRead(A3);
+  S[3] = analogRead(A4);
+  s[4] = analogRead(A5);
+  S[5] = analogRead(A6);
+  digitalWrite(pinIR, LOW); 
+  for(int i = 0; i<6; i++){
+    s[i] = map(s[i], 0, 1023, 1023, 0)
+    }
+}
+
+int getPos() {
+  leerSensores();
+  float sumaPonderada = -2.5*s[0]-1.5*s[1]-0.5*s[2]+0.5*s[3]+1.5*s[4]+2.5*s[5];
+  float suma = s[0]+s[1]+s[2]+s[3]+s[4]+s[5];
+  bool onLine = false;
+  if (suma > 1000){
+    onLine = true;
+  }
+  if (onLine) {
+    pos = int(100.0 * sumaPonderada / suma);
+  } else {
+    if (lastPos < 0) {
+      pos = -255;
+    }else if (lastPos >= 0) {
+      pos = 255;
+    }
+  }
+ lastPos = pos;
+return pos;
+}
